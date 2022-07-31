@@ -90,6 +90,8 @@ When we write this in arrow function, it will say `getName` is not a function. s
     console.log(getName);
 ```
 In this case also `getName` will assign as `undefined`.
-![sample Image]([https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg](https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80))
+
+
+![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)
 
 
