@@ -1,11 +1,12 @@
 # Hoisting
+```
 *)  var x = 7;
     function getName() {
         console.log("Ananth");
     };
     getName();
     console.log(x);
-
+```
     ==> here we will get Ananth and 7..
 
 *)  getName();
