@@ -54,4 +54,4 @@ and it prints the x value in the console.
 when the code moves to the line no.12 again the above method is followed...
 After the b() func finished, the control moves to the line no. 4. it prints the x value in the console. and atlast the whole GEC will be deleted.
 
-This is the [Video link](https://www.youtube.com/watch?v=gSDncyuGw0s&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=5){:target="_blank"} for the above explanation.
+This is the [Video link](https://www.youtube.com/watch?v=gSDncyuGw0s&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=5 target="_blank") for the above explanation.
