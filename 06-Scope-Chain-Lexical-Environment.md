@@ -6,8 +6,8 @@ the name **Lexical** means in a **Sequence** in **Order**.`c()` func is Lexicaly
 Lexical parent is Where the specific code is present physicaly, that is.. `c()`'s Lexical parent is `a()` and `a()`'s Lexical parent is `Global`,
 Lexical Environment is the Local memory + Lexical Environment of it's Parent.
 
+![photo_](https://user-images.githubusercontent.com/83916278/182921350-15cedfb8-c0d8-4dad-a420-b2d508a4180e.jpg)
 
-![photo_2](https://user-images.githubusercontent.com/83916278/182886190-55403915-8977-4e0d-a581-6809f39b5804.jpg)
 
 ### Note: Whenever a Execution Context is created Lexical Environment is also created in it. 
 In the above image, we can see Call Stack at the left side and the Code at the right side, In the Call Stack, I have mentioned the Lexical Environment in a
