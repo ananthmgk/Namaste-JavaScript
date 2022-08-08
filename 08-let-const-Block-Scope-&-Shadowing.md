@@ -66,31 +66,31 @@ At this time the Block Scope will be deleted, and the Global Scope with the valu
 ### About `Shadowing` in JS:
 
 ```
-    var a = 100;
-{
-    var a = 10;
-    let b = 20;
-    const c =30; 
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
-    console.log(a);
+         var a = 100;
+     {
+         var a = 10;
+         let b = 20;
+         const c =30; 
+         console.log(a);
+         console.log(b);
+         console.log(c);
+     }
+         console.log(a);
 ```
 ==> here we get `10` `20` `30` `10`, because `var a = 100` and `var a = 10` both are pointing to the same location (Global Scope). 
 So when JS runs the code line by line. the last assinged `var` variable's value is printed in the console.
 
 ```
-    let b = 100;
-{
-    var a = 10;
-    let b = 20;
-    const c =30; 
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
-    console.log(b);
+         let b = 100;
+     {
+         var a = 10;
+         let b = 20;
+         const c =30; 
+         console.log(a);
+         console.log(b);
+         console.log(c);
+     }
+         console.log(b);
 ``` 
 ==> here we get `10` `20` `30` `100`, because here we have two `let` variables, here `let b = 20` is in the **Block Scope**, so 
 the `console.log(b)` inside the **Block Scope** takes the value as `20`, and it prints the value. 
@@ -107,37 +107,37 @@ values. That is knows as **Shadowing**.
 This same thing happens in `const` also.
 
 ```
-    const c = 100;
-{
-    var a = 10;
-    let b = 20;
-    const c =30; 
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
-    console.log(c);
+         const c = 100;
+     {
+         var a = 10;
+         let b = 20;
+         const c =30; 
+         console.log(a);
+         console.log(b);
+         console.log(c);
+     }
+         console.log(c);
 ```
 ==> here also we get `10` `20` `30` `100`, by the above `let` explanation.
 
 ```
-    const c = 100;
-function x() {
-    const c =30;
-    console.log(c);
-}
-x();
-console.log(c);
+         const c = 100;
+     function x() {
+         const c =30;
+         console.log(c);
+     }
+     x();
+     console.log(c);
 ```
 ==> here we get `30` `100`, because it Shadows in the function Scope also.
 
 ### About Illegal Shadowing.
 
 ```
-let a = 20;
-{
-    var a = 20;
-}
+     let a = 20;
+     {
+         var a = 20;
+     }
 ```
 ==> here we get `SyntaxError: Identifier 'a' has already been declared`.
 If I try to Shadow `let` using `var`, it throws a SyntaxError. Is like Illegal Shadowing.
@@ -147,16 +147,71 @@ And we can Shadow `let` using `let`,
 And we can Shadow `const` using `const`
 
 ```
-let a = 20;
-function x() {
-    var a = 20;
-};
+     let a = 20;
+     function x() {
+         var a = 20;
+     };
 ```
 ==> here it won't shows any Error, because `var` is inside it boudaries. This is not a Illagal Shadowing.
 
+### Note: **Block Scope** also follows **Lexical Scope**, Lexical means one inside another.
+```
+      const a = 20;
+      {
+         const a = 100;
+         {
+             const a = 200;
+             console.log(a);
+         }
+      }
+```
+==> here we get `200`, because `console.log(a)` will access `a` from nearest of it.
+
+```
+     const a = 20;
+      {
+         const a = 100;
+         {
+             const a = 200;
+         }
+         console.log(a);
+      }
+```
+==> here we get `100`, because `console.log(a)` will access `a` from nearest of it.
+
+```
+      const a = 20;
+      {
+         const a = 100;
+         {
+             const a = 200;
+             console.log(a);
+         }
+      }
+```
+
+![Capture3](https://user-images.githubusercontent.com/83916278/183360624-6910b963-55c0-49c0-ba7d-30fa840c749c.JPG)
 
 
+==> here if we see in the Sources of Scope. and put a Debugger over `console.log`, each an every block has it's own 
+**Lexical Scope**.
 
+If we dont have `const a = 200` in the below code,,,
+
+```
+ const a = 20;
+ {
+    const a = 100;
+    {
+        console.log(a);
+    }
+ }
+```
+==> we get `100` as answer, so Lexical Scope works the same way inside the Block also.
+
+## Note: All the Scope rules which works on function, exactly works on the Arrow function also.
+
+This is the [Video Link](https://www.youtube.com/watch?v=lW_erSjyMeM&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=10) for the above explanation.
 
 
 
