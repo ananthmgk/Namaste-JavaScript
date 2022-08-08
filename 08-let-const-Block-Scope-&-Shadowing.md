@@ -16,7 +16,7 @@ Eg. {
 ```
 here we use muliple statement together in a Block.
 
-`if(true) console.log(true);` ==> here the if statement needs one statement, so it this is correct, But if we want mutiple statement, we need to grouping 
+`if(true) console.log(true);` ==> here the if statement needs one statement, so this is correct, But if we want mutiple statement, we need to grouping 
 them using Block. 
 ```
 Eg.
@@ -34,8 +34,8 @@ Eg.
         const c = 30;
     }
  ```
- ==> here we use three types of variables, and ###see how these variables behaves inside this Block, How Hoisting works inside this Block.
- And when we see in the Sources of the above code.
+ ==> here we use three types of variables, and 
+ ###see how these variables behaves inside this Block, How Hoisting works inside this Block. And when we see in the Sources of the above code.
  
  ![Capture1](https://user-images.githubusercontent.com/83916278/183265948-52dd9a8d-c87f-4f6b-b7e8-f690d4f25c4c.JPG)
 
@@ -65,32 +65,99 @@ At this time the Block Scope will be deleted, and the Global Scope with the valu
 
 ### About `Shadowing` in JS:
 
-
-
- var a = 100;
+```
+    var a = 100;
 {
- var a = 10;
- let b = 20;
- const c =30; 
- console.log(a);
- console.log(b);
- console.log(c);
+    var a = 10;
+    let b = 20;
+    const c =30; 
+    console.log(a);
+    console.log(b);
+    console.log(c);
 }
- console.log(a);
- console.log(b);
- console.log(c);
+    console.log(a);
+```
+==> here we get `10` `20` `30` `10`, because `var a = 100` and `var a = 10` both are pointing to the same location (Global Scope). 
+So when JS runs the code line by line. the last assinged `var` variable's value is printed in the console.
 
-So in block " var a = 10;" influences the value within the block hence  
-console.log(a); >> 10 and outside of the block 'Variable in Global environment' influences 
-value of a hence console.log(a); >> 100
-
-Illegal shadowing:
-
-let a = 200;
+```
+    let b = 100;
 {
- var a =20;
+    var a = 10;
+    let b = 20;
+    const c =30; 
+    console.log(a);
+    console.log(b);
+    console.log(c);
 }
+    console.log(b);
+``` 
+==> here we get `10` `20` `30` `100`, because here we have two `let` variables, here `let b = 20` is in the **Block Scope**, so 
+the `console.log(b)` inside the **Block Scope** takes the value as `20`, and it prints the value. 
 
-as 'var' declaration goes to 'Global environment' and sets in Memory context, it cannot be 
-set using 'Block environment' value Hence:    
-Uncaught SyntaxError: Identifier 'a' has already been declared
+And the another `let b = 100` is out of the **Block Scope**, that means inside the **Script Scope**, so the `console.log(b)` 
+inside the **Script Scope** takes the value as `100`, and it prints the value.
+
+![Capture2](https://user-images.githubusercontent.com/83916278/183337891-5353f72d-2007-47b4-9ec3-f467c3c741bd.JPG)
+
+If you see in the above image. when we put a debugger in the 6th line. and see, we have three Scopes inside the **Scopes**. 
+**Block Scope**, **Script Scope** and **Global Scope**, and their correspondent variables in it. That's y it prints different
+values. That is knows as **Shadowing**.
+
+This same thing happens in `const` also.
+
+```
+    const c = 100;
+{
+    var a = 10;
+    let b = 20;
+    const c =30; 
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+    console.log(c);
+```
+==> here also we get `10` `20` `30` `100`, by the above `let` explanation.
+
+```
+    const c = 100;
+function x() {
+    const c =30;
+    console.log(c);
+}
+x();
+console.log(c);
+```
+==> here we get `30` `100`, because it Shadows in the function Scope also.
+
+### About Illegal Shadowing.
+
+```
+let a = 20;
+{
+    var a = 20;
+}
+```
+==> here we get `SyntaxError: Identifier 'a' has already been declared`.
+If I try to Shadow `let` using `var`, it throws a SyntaxError. Is like Illegal Shadowing.
+
+But we can Shadow `var` using `var`,
+And we can Shadow `let` using `let`,
+And we can Shadow `const` using `const`
+
+```
+let a = 20;
+function x() {
+    var a = 20;
+};
+```
+==> here it won't shows any Error, because `var` is inside it boudaries. This is not a Illagal Shadowing.
+
+
+
+
+
+
+
+
