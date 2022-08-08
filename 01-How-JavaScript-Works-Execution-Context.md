@@ -41,7 +41,8 @@ we assume this call stack as a cup, at the bottom the **GEC(Global Execution Con
 ### Note:
 Here Call Stack is also called in several names **Call Stack, Execution Context stack, program stack, control stack, Runtime stack, Machine stack**.
 
-This is the [Video link](https://www.youtube.com/watch?v=iLWTnMzWtj4&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=3) for the above explanation.
+This is the [Video 1 link](https://www.youtube.com/watch?v=iLWTnMzWtj4&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=3) for the above explanation.
+This is the [Video 2 link](https://www.youtube.com/watch?v=ZvbzSrg0afE&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=2) for the above explanation.
 
 ### Execution context diagram:-
 ![IMG_20220731_194205~2](https://user-images.githubusercontent.com/83916278/182032676-f2f814f7-8e8d-46a8-b630-3f22dd89972f.jpg)
