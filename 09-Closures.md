@@ -1,4 +1,4 @@
-This is about:
+This topic is about:
 
 # Closures In JavaScript.
 
@@ -23,11 +23,9 @@ In the above image, we put a a Debugger in the `console.log(a)` line, and see in
 that, inside `y()` it forms a Closure with the variable `x()` **Lexical Scope**, which means the **`y` forms a Closure and it has access to it's 
 Parent Lexical Scope `x`**.
 
-What is Closure in MDN:
+## Closure in MDN Docs:
+
 ![Capture1](https://user-images.githubusercontent.com/83916278/183598324-1fc97d81-0b25-43c1-bcb2-8a168936a86c.JPG)
-
-![Capture2](https://user-images.githubusercontent.com/83916278/183598339-79efb6cc-372d-45cc-a5d0-a5afc27af2df.JPG)
-
 
 ### Some function methods, Examples:
 ```
@@ -143,13 +141,13 @@ In the above code if we put a debugger in the `console.log(a,b);` line. in the S
 ### That means `y` forms a Closure with the Scope of `x` and Scope of `z` along with it's variable.
 
 ### Uses of Closures:
-	- **Module Design Pattern**,
-	- **Currying**,
-	- **Function like once**,
-	- **memoize**,
-	- maintaining **state in async** world,
-	- **setTimeouts**,
-	- **Iterators**,
-	- and many more......
+- **Module Design Pattern**,
+- **Currying**,
+- **Function like once**,
+- **memoize**,
+- maintaining **state in async** world,
+- **setTimeouts**,
+- **Iterators**,
+- and many more......
 
 ### This is the [Video Link](https://www.youtube.com/watch?v=qikxEIxsXco&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=12) for the above Explanation.
