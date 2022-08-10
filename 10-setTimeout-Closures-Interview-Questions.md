@@ -1,7 +1,7 @@
 # Interview Questions about `Closures` and `setTimeout`.
 
 ### Question no.1:
-setTimeout function to print a number after 3 seconds  and its explanation.
+Use setTimeout function to print a number after 3 seconds  and its explanation.
 
 ```
     function x() {
@@ -21,11 +21,10 @@ This function forms a **Closure**, and takes value of `i` in a different place.
 And when it reaches the line `console.log("Namaste JavaScript")` it prints the string in the console, And after the 3 second, and it takes the `i` value 
 and puts it in the Callstack and it prints `1` in the console.
 
-Capture------------------------------------------------------------------------------------
-![Captu](../../../Desktop/Capture.JPG)
+![Capture](https://user-images.githubusercontent.com/83916278/183965687-34b6094a-4668-4aa4-8de2-be38f65fdd1c.JPG)
 
 ### Question no.2:
-setTimeout function to print 1 to 5 after each an every second. which means 1 after 1 second, 2 after 1 seconds, 3 after 1 seconds etc..
+Use setTimeout function to print 1 to 5 after each an every second. which means 1 after 1 second, 2 after 1 seconds, 3 after 1 seconds etc..
 
 ```
 function x() {
@@ -62,7 +61,8 @@ function x() {
 }
 x()
 ```
-Capture 1---------------------------------------------------------------------------------
+
+![Capture1](https://user-images.githubusercontent.com/83916278/183965930-2e0b695d-8edb-4dfd-9e1b-7ef793243a22.JPG)
 
 ==> here it prints  `Namaste JavaScript` after 1 second `1` after 1 second `2` after 1 second `3` after 1 second `4` after 1 second `5` after 1 second `6`.
 In each time this setTimeout runs, it has it's own copy of new variable of `i`.
