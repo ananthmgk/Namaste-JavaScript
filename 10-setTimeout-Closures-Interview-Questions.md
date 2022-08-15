@@ -90,3 +90,6 @@ x();
 ```
 and we have to supply the `i` which is in the `console.log(x)` to the new copy of `i`, So we have to call the `close()` with an `i`. like ` close(i)`,
 and pass this `i` as `x` like `close(x)`,and print the `x`. it works correctly.
+
+
+### This is the [Video Link](https://www.youtube.com/watch?v=eBTBG4nda2A&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=13) for the above Explanation.
